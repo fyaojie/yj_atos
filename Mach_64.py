@@ -42,7 +42,15 @@ class Mach_64(Mach):
                     '<' + str(cmdsize - 8) + 's',
                     f.read(cmdsize-8)
                 )
-                print(value[0].hex().upper())
+                # print(self.loadCommand(cmd))
+                # print(value[0].hex().upper())
+                type = self.loadCommand(cmd)
+                if type == 'LC_UUID':
+                    self.uuid = value[0].hex().upper()
+                elif type == 'LC_SYMTAB':
+                    print(type)
+                    print(value)
+
 
 
 
