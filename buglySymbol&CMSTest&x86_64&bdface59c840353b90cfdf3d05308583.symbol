@@ -1,0 +1,110 @@
+File:	/Users/symbio/Desktop/CMSTest.app.dSYM/Contents/Resources/DWARF/CMSTest
+Format:	Mach-O/64-Bit
+Arch:	x86_64
+Symbols:	101
+Tool Version:	2.4.3
+File Version:	1.4
+UUID:	bdface59c840353b90cfdf3d05308583
+Built Time:	2021-11-03 05:05:29
+Symbol table:
+1ed0	1ee0	-[ViewController viewDidLoad]	ViewController.m:16
+1ee0	1f03	-[ViewController viewDidLoad]	ViewController.m:17
+1f03	1f09	-[ViewController viewDidLoad]	ViewController.m:19
+1f10	1f59	-[AppDelegate application:didFinishLaunchingWithOptions:]	AppDelegate.m:17
+1f59	1f62	-[AppDelegate application:didFinishLaunchingWithOptions:]	AppDelegate.m:20
+1f62	1f66	-[AppDelegate application:didFinishLaunchingWithOptions:]	AppDelegate.m:0
+1f66	1f7c	-[AppDelegate application:didFinishLaunchingWithOptions:]	AppDelegate.m:20
+1f80	1fed	-[AppDelegate application:configurationForConnectingSceneSession:options:]	AppDelegate.m:26
+1fed	1ffd	-[AppDelegate application:configurationForConnectingSceneSession:options:]	AppDelegate.m:29
+1ffd	2001	-[AppDelegate application:configurationForConnectingSceneSession:options:]	AppDelegate.m:29
+2001	202c	-[AppDelegate application:configurationForConnectingSceneSession:options:]	AppDelegate.m:29
+202c	2044	-[AppDelegate application:configurationForConnectingSceneSession:options:]	AppDelegate.m:29
+2044	2059	-[AppDelegate application:configurationForConnectingSceneSession:options:]	AppDelegate.m:29
+2059	2089	-[AppDelegate application:configurationForConnectingSceneSession:options:]	AppDelegate.m:30
+2090	20d9	-[AppDelegate application:didDiscardSceneSessions:]	AppDelegate.m:33
+20d9	20e2	-[AppDelegate application:didDiscardSceneSessions:]	AppDelegate.m:37
+20e2	20e6	-[AppDelegate application:didDiscardSceneSessions:]	AppDelegate.m:0
+20e6	20f5	-[AppDelegate application:didDiscardSceneSessions:]	AppDelegate.m:37
+2100	2116	main	main.m:11
+2116	211e	main	main.m:12
+211e	2127	main	main.m:13
+2127	2136	main	main.m:15
+2136	213e	main	main.m:15
+213e	2155	main	main.m:15
+2155	215e	main	main.m:16
+215e	2161	main	main.m:17
+2161	2165	main	main.m:17
+2165	2169	main	main.m:17
+2169	2172	main	main.m:17
+2172	2175	main	main.m:17
+2175	2187	main	main.m:18
+2190	21f2	-[SceneDelegate scene:willConnectToSession:options:]	SceneDelegate.m:17
+21f2	21fb	-[SceneDelegate scene:willConnectToSession:options:]	SceneDelegate.m:21
+21fb	21ff	-[SceneDelegate scene:willConnectToSession:options:]	SceneDelegate.m:0
+21ff	221b	-[SceneDelegate scene:willConnectToSession:options:]	SceneDelegate.m:21
+2220	2250	-[SceneDelegate sceneDidDisconnect:]	SceneDelegate.m:24
+2250	225f	-[SceneDelegate sceneDidDisconnect:]	SceneDelegate.m:29
+2260	2290	-[SceneDelegate sceneDidBecomeActive:]	SceneDelegate.m:32
+2290	229f	-[SceneDelegate sceneDidBecomeActive:]	SceneDelegate.m:35
+22a0	22d0	-[SceneDelegate sceneWillResignActive:]	SceneDelegate.m:38
+22d0	22df	-[SceneDelegate sceneWillResignActive:]	SceneDelegate.m:41
+22e0	2310	-[SceneDelegate sceneWillEnterForeground:]	SceneDelegate.m:44
+2310	231f	-[SceneDelegate sceneWillEnterForeground:]	SceneDelegate.m:47
+2320	2350	-[SceneDelegate sceneDidEnterBackground:]	SceneDelegate.m:50
+2350	235f	-[SceneDelegate sceneDidEnterBackground:]	SceneDelegate.m:54
+2360	236c	-[SceneDelegate window]	SceneDelegate.h:12
+236c	237d	-[SceneDelegate window]	SceneDelegate.h:12
+2380	2394	-[SceneDelegate setWindow:]	SceneDelegate.h:12
+2394	23ab	-[SceneDelegate setWindow:]	SceneDelegate.h:0
+23ab	23b1	-[SceneDelegate setWindow:]	SceneDelegate.h:12
+23c0	23d7	-[SceneDelegate .cxx_destruct]	SceneDelegate.m:14
+23d7	23f0	-[SceneDelegate .cxx_destruct]	SceneDelegate.m:14
+4050	4058	__OBJC_LABEL_PROTOCOL_$_NSObject
+4058	4060	__OBJC_LABEL_PROTOCOL_$_UIApplicationDelegate
+4060	4068	__OBJC_LABEL_PROTOCOL_$_UISceneDelegate
+4068	4070	__OBJC_LABEL_PROTOCOL_$_UIWindowSceneDelegate
+8050	8098	__OBJC_METACLASS_RO_$_ViewController
+8098	80b8	__OBJC_$_INSTANCE_METHODS_ViewController
+80b8	8100	__OBJC_CLASS_RO_$_ViewController
+8100	82d0	__OBJC_$_PROTOCOL_INSTANCE_METHODS_NSObject
+82d0	82f0	__OBJC_$_PROTOCOL_INSTANCE_METHODS_OPT_NSObject
+82f0	8338	__OBJC_$_PROP_LIST_NSObject
+8338	83d8	__OBJC_$_PROTOCOL_METHOD_TYPES_NSObject
+83d8	83f0	__OBJC_$_PROTOCOL_REFS_UIApplicationDelegate
+83f0	8920	__OBJC_$_PROTOCOL_INSTANCE_METHODS_OPT_UIApplicationDelegate
+8920	8938	__OBJC_$_PROP_LIST_UIApplicationDelegate
+8938	8af0	__OBJC_$_PROTOCOL_METHOD_TYPES_UIApplicationDelegate
+8af0	8b08	__OBJC_CLASS_PROTOCOLS_$_AppDelegate
+8b08	8b50	__OBJC_METACLASS_RO_$_AppDelegate
+8b50	8ba0	__OBJC_$_INSTANCE_METHODS_AppDelegate
+8ba0	8bf8	__OBJC_$_PROP_LIST_AppDelegate
+8bf8	8c40	__OBJC_CLASS_RO_$_AppDelegate
+8c40	8e10	__OBJC_$_PROTOCOL_INSTANCE_METHODS_NSObject
+8e10	8e30	__OBJC_$_PROTOCOL_INSTANCE_METHODS_OPT_NSObject
+8e30	8e78	__OBJC_$_PROP_LIST_NSObject
+8e78	8f18	__OBJC_$_PROTOCOL_METHOD_TYPES_NSObject
+8f18	8f30	__OBJC_$_PROTOCOL_REFS_UISceneDelegate
+8f30	9070	__OBJC_$_PROTOCOL_INSTANCE_METHODS_OPT_UISceneDelegate
+9070	90d8	__OBJC_$_PROTOCOL_METHOD_TYPES_UISceneDelegate
+90d8	90f0	__OBJC_$_PROTOCOL_REFS_UIWindowSceneDelegate
+90f0	9170	__OBJC_$_PROTOCOL_INSTANCE_METHODS_OPT_UIWindowSceneDelegate
+9170	9188	__OBJC_$_PROP_LIST_UIWindowSceneDelegate
+9188	91b0	__OBJC_$_PROTOCOL_METHOD_TYPES_UIWindowSceneDelegate
+91b0	91c8	__OBJC_CLASS_PROTOCOLS_$_SceneDelegate
+91c8	9210	__OBJC_METACLASS_RO_$_SceneDelegate
+9210	92f0	__OBJC_$_INSTANCE_METHODS_SceneDelegate
+92f0	9318	__OBJC_$_INSTANCE_VARIABLES_SceneDelegate
+9318	9370	__OBJC_$_PROP_LIST_SceneDelegate
+9370	93b8	__OBJC_CLASS_RO_$_SceneDelegate
+93e8	93f0	_OBJC_IVAR_$_SceneDelegate._window
+93f0	9418	_OBJC_CLASS_$_ViewController
+9418	9440	_OBJC_METACLASS_$_ViewController
+9440	9468	_OBJC_METACLASS_$_AppDelegate
+9468	9490	_OBJC_CLASS_$_AppDelegate
+9490	94b8	_OBJC_METACLASS_$_SceneDelegate
+94b8	94e0	_OBJC_CLASS_$_SceneDelegate
+94e0	94e8	__dyld_private
+94e8	9548	__OBJC_PROTOCOL_$_NSObject
+9548	95a8	__OBJC_PROTOCOL_$_UIApplicationDelegate
+95a8	9608	__OBJC_PROTOCOL_$_UISceneDelegate
+9608	9668	__OBJC_PROTOCOL_$_UIWindowSceneDelegate

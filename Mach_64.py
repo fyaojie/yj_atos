@@ -1,13 +1,64 @@
 # coding=utf-8
+from ctypes import sizeof
 import os
 import struct
 from Mach import Mach
+from SegmentCommand64 import SegmentCommand64
+from Symbol import Symbol
+from Symtab import Symtab
 
 
 class Mach_64(Mach):
 
     def __init__(self):
         self.magicNumber = '64-Bit'
+
+    # 符号表解析
+    def analyticalSymbol(self, f):
+        f.seek(self.symtab.symoff)
+
+        for i in range(self.symtab.nsyms):
+            value = struct.unpack(
+                        '<IBBHQ',
+                        f.read(16)
+                    )
+            # print(i)
+
+            currentBol = Symbol(
+                value[0],
+                value[1],
+                value[2],
+                value[3],
+                value[4]
+            )
+            # break
+            self.symbols.append(currentBol)
+
+
+        # 这里有很多情况出现符号表索引顺序不正确,进行一次排序校对
+        self.symbols.sort(key= lambda x:x.n_strx)
+
+        for i in range(len(self.symbols) - 1):
+
+            currentBol = self.symbols[i]
+            nextBol = self.symbols[i + 1]
+            currentBol.setNextStrx(nextBol.n_strx)
+
+
+        # for bol in self.symbols:
+        #     print(bol.description())
+
+        # print(len(self.symbols))
+        for bol in self.symbols:
+            f.seek(self.symtab.stroff + bol.n_strx)
+            if bol.lenth > 0:
+                value = struct.unpack(
+                        '<' + str(bol.lenth) + 's',
+                        f.read(bol.lenth)
+                    )
+                print(value)
+            else:
+                print('cool')
 
     def analyticalData(self):
         with open(self.path, 'rb') as f:
@@ -36,24 +87,76 @@ class Mach_64(Mach):
                     '<II',
                     f.read(8)
                 )
+
                 # print(cmd)
                 # print(cmdsize)
-                value = struct.unpack(
-                    '<' + str(cmdsize - 8) + 's',
-                    f.read(cmdsize-8)
-                )
+
                 # print(self.loadCommand(cmd))
                 # print(value[0].hex().upper())
                 type = self.loadCommand(cmd)
                 if type == 'LC_UUID':
+                    value = struct.unpack(
+                        '<' + str(cmdsize - 8) + 's',
+                        f.read(cmdsize-8)
+                    )
                     self.uuid = value[0].hex().upper()
                 elif type == 'LC_SYMTAB':
-                    print(type)
+
+                    self.symtab.cmd = cmd
+                    self.symtab.cmdsize = cmdsize
+
+                    (symoff, nsyms, stroff, strsize) = struct.unpack(
+                        '<IIII',
+                        f.read(16)
+                    )
+                    self.symtab.symoff = symoff
+                    self.symtab.nsyms = nsyms
+                    self.symtab.stroff = stroff
+                    self.symtab.strsize = strsize
+                elif type == 'LC_SEGMENT_64':
+                    value = struct.unpack(
+                            '<16sQQQQiiII',
+                            f.read(64)
+                        )
                     print(value)
+                    segment = SegmentCommand64()
+                    self.segments.append(segment)
+
+                    segment.cmd = cmd
+                    segment.cmdsize = cmdsize
+                    segment.segname = value[0]
+                    segment.vmaddr = value[1]
+                    segment.vmsize = value[2]
+                    segment.fileoff = value[3]
+                    segment.filesize = value[4]
+                    segment.maxprot = value[5]
+                    segment.initprot = value[6]
+                    segment.nsects = value[7]
+                    segment.flags = value[8]
 
 
 
+                else:
+                    f.seek(cmdsize - 8, 1)
+                    # print(cmd)
+                    # print(cmdsize)
+                    # value = struct.unpack(
+                    #     '<' + str(cmdsize - 8) + 'c',
+                    #     f.read(cmdsize-8)
+                    # )
+                    # print(value)
 
+            # 符号表解析
+            # self.analyticalSymbol(f)
+
+
+                # break
+            # f.seek(self.symtab.stroff)
+            # value = struct.unpack(
+            #             '<' + str(self.symtab.strsize) + 's',
+            #             f.read(self.symtab.strsize)
+            #         )
+            # print(value[0].hex().upper())
             # self.uuid = value[0].hex().upper()
 
             # (cmd, cmdsize) = struct.unpack(

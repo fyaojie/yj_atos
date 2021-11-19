@@ -1,5 +1,8 @@
 # coding=utf-8
 from os import nice, path
+from SegmentCommand64 import SegmentCommand64
+from Symbol import Symbol
+from Symtab import Symtab
 
 class Mach:
     path = ''
@@ -45,9 +48,17 @@ class Mach:
     # 文件类型
     filetype = ''
 
+    # 符号表配置
+    symtab = Symtab()
+    # 符号相关信息
+    symbols = []
+
+    segments = []
+
     def description(self):
         return  'File: ' + self.path + '\n' + \
                 'Format: ' + 'Mach-O/' + self.magicNumber + '\n' + \
+                'Symtab: ' + self.symtab.description() + '\n' + \
                 'Arch: ' + self.arch + '\n' + \
                 'Filetype: ' + self.filetype + '\n' + \
                 'Symbols: ' + self.symbolsCount + '\n' + \
@@ -253,3 +264,4 @@ if __name__ == '__main__':
     mach = Mach()
     print(mach.description())
     print(mach.loadCommand(0x111))
+    print(mach.segment)
