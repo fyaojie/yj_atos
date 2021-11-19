@@ -5,9 +5,13 @@ import os
 
 from Mach import Mach
 
+# https://www.jianshu.com/p/c07e5ee89b3e
+# https://blog.csdn.net/zhangyutangde/article/details/78339143?utm_medium=distribute.pc_relevant.none-task-blog-2~default~baidujs_title~default-0.no_search_link&spm=1001.2101.3001.4242.1
+# http://blog.tingyun.com/web/article/detail/1341
+# https://www.sohu.com/a/437063227_571478
 
-
-
+# dwarfdump -F --debug-line /Users/symbio/Desktop/CMSTest.app.dSYM > line-e.txt
+# nm /Users/symbio/Desktop/CMSTest.app.dSYM/Contents/Resources/DWARF/CMSTest
 
 # data_path = os.path.abspath('CMSTest')
 # # 读取二进制文件
