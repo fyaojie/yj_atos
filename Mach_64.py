@@ -65,18 +65,14 @@ class Mach_64(Mach):
         if ('line' in str(section.sectname)) == False:
             return
 
-        size = min(
-            section.size,
-            20
-        )
-        f.seek(section.addr + section.offset)
-        # value = struct.unpack(
-        #             '<' + str(size) + 'c',
-        #             f.read(size)
-        #         )
-        print('test')
-        print(section.size)
-        print(f.read(section.size))
+        f.seek(section.offset)
+        value = struct.unpack(
+                    '<' + str(section.size) + 's',
+                    f.read(section.size)
+                )
+        print(value)
+        # print(section.size)
+        # print(f.read(section.size))
 
     def analyticalData(self):
         with open(self.path, 'rb') as f:
