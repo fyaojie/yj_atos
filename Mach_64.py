@@ -3,6 +3,7 @@ from ctypes import sizeof
 import os
 import struct
 from Mach import Mach
+from Section64 import Section64
 from SegmentCommand64 import SegmentCommand64
 from Symbol import Symbol
 from Symtab import Symtab
@@ -59,6 +60,23 @@ class Mach_64(Mach):
                 print(value)
             else:
                 print('cool')
+
+    def analyticalLine(self, section, f):
+        if ('line' in str(section.sectname)) == False:
+            return
+
+        size = min(
+            section.size,
+            20
+        )
+        f.seek(section.addr + section.offset)
+        # value = struct.unpack(
+        #             '<' + str(size) + 'c',
+        #             f.read(size)
+        #         )
+        print('test')
+        print(section.size)
+        print(f.read(section.size))
 
     def analyticalData(self):
         with open(self.path, 'rb') as f:
@@ -134,12 +152,22 @@ class Mach_64(Mach):
                     segment.nsects = value[7]
                     segment.flags = value[8]
 
+                    tempArray = []
+                    for index in range(int((cmdsize - 64) / 80)):
+                        sectionValue =  struct.unpack(
+                                            '<16s16sQQIIIIIIII',
+                                            f.read(80)
+                                        )
 
+                        tempArray.append(Section64(sectionValue))
+
+                    segment.sections = tempArray
+                        # print(sectionValue)
 
                 else:
                     f.seek(cmdsize - 8, 1)
-                    # print(cmd)
-                    # print(cmdsize)
+                    print(cmd)
+                    print(cmdsize)
                     # value = struct.unpack(
                     #     '<' + str(cmdsize - 8) + 'c',
                     #     f.read(cmdsize-8)
@@ -149,6 +177,11 @@ class Mach_64(Mach):
             # 符号表解析
             # self.analyticalSymbol(f)
 
+            # Section 解析
+            for obj in self.segments:
+                for tempSection in obj.sections:
+                    # print(tempSection.sectname)
+                    self.analyticalLine(tempSection, f)
 
                 # break
             # f.seek(self.symtab.stroff)

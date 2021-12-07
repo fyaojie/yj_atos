@@ -19,6 +19,7 @@
 # 	uint32_t	flags;		/* flags */
 # };
 
+# <16sQQQQiiII
 class SegmentCommand64:
     cmd = 0
     cmdsize = 0
@@ -31,6 +32,8 @@ class SegmentCommand64:
     initprot = 0
     nsects = 0
     flags = 0
+
+    sections = []
 
 if __name__ == '__main__':
     sym = SegmentCommand64()

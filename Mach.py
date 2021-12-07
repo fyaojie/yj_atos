@@ -55,6 +55,8 @@ class Mach:
 
     segments = []
 
+    sections = []
+
     def description(self):
         return  'File: ' + self.path + '\n' + \
                 'Format: ' + 'Mach-O/' + self.magicNumber + '\n' + \

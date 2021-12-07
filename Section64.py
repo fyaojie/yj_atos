@@ -53,3 +53,38 @@
 # 	uint32_t	reserved2;	/* reserved (for count or sizeof) */
 # 	uint32_t	reserved3;	/* reserved */
 # };
+
+# <16s16sQQIIIIIIII
+class Section64:
+   sectname = ''
+   segname = ''
+   addr = 0
+   size = 0
+   offset = 0
+   align = 0
+   reloff = 0
+   nreloc = 0
+   flags = 0
+   reserved1 = 0
+   reserved2 = 0
+   reserved3 = 0
+
+   def __init__(self, value) -> None:
+      self.sectname = value[0]
+      self.segname = value[1]
+      self.addr = value[2]
+      self.size = value[3]
+      self.offset = value[4]
+      self.align = value[5]
+      self.reloff = value[6]
+      self.nreloc = value[7]
+      self.flags = value[8]
+      self.reserved1 = value[9]
+      self.reserved2 = value[10]
+      self.reserved3 = value[11]
+
+
+
+if __name__ == '__main__':
+   sym = Section64()
+   print(sym)
